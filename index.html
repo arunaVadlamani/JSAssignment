@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" href="./images/favicon.png" type="image/png">
+    <title>Product Listing Page</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-container">
+        <h1 class="header-title">
+          Products
+        </h1>
+        <div class="header-right">
+          <div class="search-bar" id="searchContainer">
+            <input
+              type="text"
+              id="searchBar"
+              class="search-input"
+              placeholder="Search Products"
+            />
+            <div id="searchItems" class="search-items"></div>
+          </div>
+          <div id="menu" class="header-cart-icon">
+            <span class="icon-cart-plus"></span>
+            <div id="headerCart" class="header-cart-value">0</div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <h2 class="page-title" id="pageTitle">Items</h2>
+      <div id="loader" class="loader">
+        <img src="./images/loader.gif" width="100" />
+      </div>
+      <div class="grid-container" id="list"></div>
+    </main>
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-close-sticky">
+        <div id="sidebar-close" class="icon-close sidebar-close"></div>
+        <h2 class="cart-heading">Cart</h2>
+      </div>
+      <div id="cart" class="cart"></div>
+      <div class="cart-sticky">
+        <div id="cartTotal" class="cart-total"></div>
+        <div id="cartClear"></div>
+      </div>
+    </aside>
+    <script id="template-list-item" type="text/template">
+      <div class="grid-item product">
+          <div class="product-image" style="background-image: url({{img}})"></div>
+          <div class="product-footer">
+              <div>
+                  <h1 class="product-name">{{name}}</h1>
+                  <div class="product-price"><span class="icon-inr product-price-icon"></span>{{price}}</div>
+              </div>
+              <button data-product-id={{id}} class="btn-add btn-big">Add to cart</button>
+          </div>
+      </div>
+    </script>
+    <script id="template-search-item" type="text/template">
+      <div class="search-item">
+          <div>{{name}}</div>
+          <div><button class="btn-search-add btn-tiny search-item-add" data-product-id={{id}}>Add</button></div>
+      </div>
+    </script>
+    <script id="template-search-blank" type="text/template">
+      <div class="search-no-result">
+          No Items Found
+      </div>
+    </script>
+    <script id="template-cart-item" type="text/template">
+      <div data-product-id={{id}} class="cart-item">
+          <div style="background-image: url({{img}})" class="cart-item-img"></div>
+          <div class="cart-item-details">
+              <div>
+                  <div class="cart-item-name">{{name}}</div>
+                  <div class="cart-item-price"><span class="icon-inr cart-item-price-icon"></span>{{price}}</div>
+              </div>
+              <span class="cart-item-remove icon-trash" data-product-id={{id}}></span>
+          </div>
+      </div>
+    </script>
+    <script id="template-remove-all-cart" type="text/template">
+      <div class="cart-clear">
+          <button class="btn-remove-all btn-small">Clear All</button>
+      </div>
+    </script>
+    <script id="template-cart-total" type="text/template">
+      <div class="cart-total">
+          Total Amount: <span class="icon-inr cart-item-price-icon"></span>{{total}}
+      </div>
+    </script>
+    <script src="./scripts.js"></script>
+  </body>
+</html>
