@@ -416,6 +416,7 @@ header {
 }
 .btn-big {
   height: rem-calc(40);
+  min-width: rem-calc(110);
 }
 .btn-small {
   height: rem-calc(30);
@@ -458,13 +459,13 @@ header {
     -webkit-transform: translateX(100%);
   }
 }
-.animate__animated {
+.animate-animated {
   -webkit-animation-duration: 0.5s;
   animation-duration: 0.5s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
-.animate__pulse {
+.animate-pulse {
   -webkit-animation-name: pulse;
   animation-name: pulse;
   -webkit-animation-timing-function: ease-in-out;

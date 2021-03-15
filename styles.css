@@ -403,6 +403,7 @@ header {
 
 .btn-big {
   height: 2.5rem;
+  min-width: 6.875rem;
 }
 
 .btn-small {
@@ -440,14 +441,14 @@ header {
     -webkit-transform: translateX(100%);
   }
 }
-.animate__animated {
+.animate-animated {
   -webkit-animation-duration: 0.5s;
   animation-duration: 0.5s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 
-.animate__pulse {
+.animate-pulse {
   -webkit-animation-name: pulse;
   animation-name: pulse;
   -webkit-animation-timing-function: ease-in-out;

@@ -136,17 +136,18 @@ class Cart extends Products {
     });
     document
       .getElementById("headerCart")
-      .classList.add("animate__animated", "animate__pulse");
+      .classList.add("animate-animated", "animate-pulse");
     setTimeout(() => {
       document
         .getElementById("headerCart")
-        .classList.remove("animate__animated", "animate__pulse");
+        .classList.remove("animate-animated", "animate-pulse");
     }, 1000);
   }
   addButtonStyling = () => {
     if (this.cartItems.length) {
       document.querySelectorAll(".btn-add,.btn-search-add").forEach(btn => {
         btn.disabled = false;
+        btn.innerHTML = 'ADD TO CART';
       });
       for (let key in this.cartItems) {
         document
@@ -155,6 +156,7 @@ class Cart extends Products {
           )
           .forEach(btn => {
             btn.disabled = true;
+            btn.innerHTML = 'ADDED';
           });
         document
           .querySelectorAll(
@@ -162,14 +164,17 @@ class Cart extends Products {
           )
           .forEach(btn => {
             btn.disabled = true;
+            btn.innerHTML = 'ADDED';
           });
       }
     } else {
       document.querySelectorAll(`.btn-add`).forEach(btn => {
         btn.disabled = false;
+        btn.innerHTML = 'ADD TO CART';
       });
       document.querySelectorAll(`.btn-search-add`).forEach(btn => {
         btn.disabled = false;
+        btn.innerHTML = 'ADD TO CART';
       });
     }
   };
